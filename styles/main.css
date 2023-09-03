@@ -16,6 +16,10 @@
   }
 }
 
+.logo-carrito {
+  color: white;
+}
+
 body {
   background-color: #2c2c2c;
 }
@@ -357,6 +361,9 @@ main {
   object-position: center;
 }
 
+.container .row .carrito img {
+  color: red;
+}
 .container .info_tienda p {
   line-height: 2rem;
   text-align: center;
@@ -390,6 +397,11 @@ main {
     width: 150px;
   }
 }
+.container .listado-productos .col .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .container .listado-productos .col .card .card-body .card-title {
   text-align: center;
   font-size: 0.8rem;
@@ -420,6 +432,9 @@ main {
 }
 .container .listado-productos .col .card .list-group {
   font-weight: bold;
+}
+.container .listado-productos .col .card .button {
+  justify-content: flex-end;
 }
 
 .header__inicio {
