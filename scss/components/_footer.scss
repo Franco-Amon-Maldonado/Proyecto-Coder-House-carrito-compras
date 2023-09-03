@@ -1,0 +1,20 @@
+footer{
+    border-top: 1px solid $text-100;
+}
+
+.redes{
+    display: flex;
+    gap: 1.5rem;
+
+    svg{
+        color: $primary-100;
+        transition: color .3s ease;
+    }
+    svg:hover{
+        color: $primary-200;
+    }
+}
+
+.p__footer{
+    color: $text-200;
+}

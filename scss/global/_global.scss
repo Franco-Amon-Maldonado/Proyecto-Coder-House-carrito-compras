@@ -1,0 +1,61 @@
+.heading{
+    font-size: 3rem;
+    font-weight: 700;
+    color: $text-100;
+    @include tablet{
+        font-size: 5rem;
+    }
+}
+
+body{
+    background-color: $bg-300;
+}
+
+a{
+    text-decoration: none;
+    color: $bg-300;
+}
+
+main{
+    min-height: 100vh;
+}
+
+.contenedor__planes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 4rem;
+}
+
+.card-button{
+    padding: 1rem 2rem;
+    width: fit-content;
+    text-transform: uppercase;
+    border: none;
+    background-color: $primary-100;
+    color: $bg-300;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 1.3rem;
+    letter-spacing:0.2rem;
+    transition: opacity .3s ease;
+    align-self: center;
+}
+
+.card-button:hover{
+    cursor: pointer;
+    opacity: .8;
+   
+}
+
+@keyframes titleHome {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+

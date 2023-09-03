@@ -1,0 +1,72 @@
+.container{
+    .info_tienda{
+        p{
+            line-height: 2rem;
+            text-align:center;
+            font-size: 1.3rem;
+            color: $text-200;
+        }
+    }
+    
+    .div-filter{
+        input{
+            width: 100%;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+        }
+
+        small{
+            color: $text-200;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+    }
+
+    .listado-productos{
+        .col{
+            display: flex;
+            justify-content: center;
+            .card{
+                @include tablet{
+                    width: 18rem;
+                }
+            img{
+                width: 80px;
+                @include tablet{
+                    width: 150px;
+                }
+            }
+            .card-body{
+                .card-title{
+                    text-align: center;
+                    font-size:0.8rem;
+                    font-weight: bold;
+                    @include tablet{
+                        font-size: 1.2rem;
+                    }
+                }
+                .card-text{
+                    font-size:0.7rem;
+                    @include tablet{
+                        font-size: 1rem;
+                    }
+                }
+                a{
+                    font-size: 0.7rem;
+                    display: block;
+                    text-align: center;
+                    @include tablet{
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .list-group{
+                font-weight: bold;
+            }
+            }
+        }
+       
+    }
+}

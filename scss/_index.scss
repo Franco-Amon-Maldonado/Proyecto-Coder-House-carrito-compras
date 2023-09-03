@@ -1,0 +1,92 @@
+.container__planes{
+    display: flex;
+    justify-content:center;
+    h2{
+        text-align: center;
+        color: lightgrey;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+        font-weight: 400;
+    }
+    
+       
+        .planes__card{
+            display: flex;
+            margin-top: 7rem;
+            text-align: center;
+        
+            .col{
+
+                .plan1{
+                    background: linear-gradient(to right, rgb(0 0 0 / .6), rgb(0 0 0 / .7)), url(../img/fondoPlan1.webp) no-repeat center;
+                    background-size: cover;
+                }
+        
+                .plan2{
+                    background: linear-gradient(to right, rgb(0 0 0 / .6), rgb(0 0 0 / .7)), url(../img/fondoPlan2.webp) no-repeat center;
+                    background-size: cover;
+                }
+        
+                figure{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 2rem;
+                    height: 100%;
+                    padding: 4rem;
+                    background-color: $primary-100;
+                    border-radius: 10px;
+            
+
+                    figcaption{
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        text-align: center;
+                        color: $primary-100;
+                    }
+            
+                    p{
+                        color: lightgrey;
+                        font-size: 1.5rem;
+                    }
+
+                }
+            }
+           
+        
+        }
+    
+}
+
+.contenedor__galeria{
+    min-height: 100vh;
+
+    h2{
+        text-align: center;
+        color: lightgrey;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+        font-weight: 400;
+    }
+
+    .galeria{
+        margin-top: 7rem;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform .3s ease;
+        }
+
+        img:hover{
+            transform: scale(1.05);
+        }
+    }
+
+
+}
+

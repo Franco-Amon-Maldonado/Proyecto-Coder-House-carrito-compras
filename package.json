@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-coder-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franco-Amon-Maldonado/Proyecto-Coder-House.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Franco-Amon-Maldonado/Proyecto-Coder-House/issues"
+  },
+  "homepage": "https://github.com/Franco-Amon-Maldonado/Proyecto-Coder-House#readme",
+  "dependencies": {
+    "bootstrap-icons": "1.10.5"
+  }
+}

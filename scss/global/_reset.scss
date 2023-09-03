@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Golos Text', sans-serif;
+}
+
+.heading{
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-100;
+    @include tablet{
+        font-size: 5rem;
+    }
+}
+
+body{
+    background-color: $bg-300;
+}
+
+header{
+    padding: 1.2rem 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-border{
+    border-top: 1px solid $text-100;
+}
+
+main, .main-border{
+    min-height: 100vh;
+}
