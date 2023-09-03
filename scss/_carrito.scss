@@ -1,11 +1,49 @@
 .container{
 
     .row{
-        .carrito{
-            img{
+        
+            .submenu {
+                position: relative;
 
-                color: red;
+
+                #carrito{
+                    display: none;
+                }
+
+                &:hover #carrito{
+                    display: block;
+                    position: absolute;
+                    right:0;
                 
+                    top:100%;
+                    z-index: 1;
+                    background-color: white;
+                    padding: 20px;
+                    max-height: 400px;
+                    min-width: 500px;
+                    text-align: center;
+                    overflow-y: auto;
+                }
+            }
+            
+
+            #lista-carrito{
+                .borrar-producto {
+                    background-color: red;
+                    border-radius: 50%;
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+
+            #vaciar-carrito{
+                border: 1px solid gray;
+                padding: 0.5rem;
+                display: block;
+                text-align: center;
+                margin-top:1rem;
             }
         }
     }
@@ -86,4 +124,3 @@
         }
        
     }
-}
