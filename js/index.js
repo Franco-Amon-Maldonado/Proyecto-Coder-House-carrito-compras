@@ -5,6 +5,7 @@ const $LISTA_PRODUCTOS = document.querySelector('#lista-productos')
 const $VACIAR_CARRITO = document.querySelector('#vaciar-carrito')
 const $INPUT_FILTER = document.querySelector('#input-filter')
 const $PRECIO_TOTAL = document.querySelector('#precio-total')
+const $PRODUCTOS = document.querySelectorAll('.listado-productos .card')
 let listadoCarrito = []
 
 cargarEvento()
@@ -16,6 +17,24 @@ function cargarEvento() {
 		listadoCarrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 		añadirProductosCarrito()
+	})
+
+	//Filtrar productos
+
+	$INPUT_FILTER.addEventListener('keyup', () => {
+		const filtro = $INPUT_FILTER.value.toLowerCase().trim()
+		const productosFiltrados = Array.from($PRODUCTOS).filter((producto) => {
+			const tituloProducto = producto.querySelector('.card-title').textContent.toLowerCase()
+			return tituloProducto.includes(filtro)
+		})
+
+		$PRODUCTOS.forEach((producto) => {
+			if (productosFiltrados.includes(producto)) {
+				producto.style.display = 'block'
+			} else {
+				producto.style.display = 'none'
+			}
+		})
 	})
 
 	$VACIAR_CARRITO.addEventListener('click', vaciarCarrito)
@@ -63,7 +82,7 @@ function obtenerDatosProductos(producto) {
 	const infoProducto = {
 		imagen: producto.querySelector('img').src,
 		titulo: producto.querySelector('.card-title').textContent,
-		precio: parseFloat(producto.querySelector('.precio').textContent.replace('$', '')),
+		precio: parseFloat(producto.querySelector('.precio').textContent.replace('$', '')), //extraigo el precio como numero
 		id: producto.querySelector('a').getAttribute('data-id'),
 		cantidad: 1,
 	}
