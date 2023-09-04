@@ -9,6 +9,13 @@ cargarEvento()
 function cargarEvento() {
 	$LISTA_PRODUCTOS.addEventListener('click', agregarProducto)
 	$CARRITO.addEventListener('click', eliminarProducto)
+
+	document.addEventListener('DOMContentLoaded', () => {
+		listadoCarrito = JSON.parse(localStorage.getItem('carrito')) || []
+
+		añadirProductosCarrito()
+	})
+
 	$VACIAR_CARRITO.addEventListener('click', vaciarCarrito)
 }
 
@@ -18,6 +25,7 @@ function cargarEvento() {
 
 function vaciarCarrito() {
 	listadoCarrito = []
+	localStorage.removeItem('carrito')
 	limpiarCarrito()
 }
 
@@ -103,10 +111,16 @@ function añadirProductosCarrito() {
 		//Agrego el tr creado al tbody
 		$CONTENIDO_CARRITO.appendChild(tr)
 	})
+
+	agregarLocalStorage()
 }
 
 function limpiarCarrito() {
 	while ($CONTENIDO_CARRITO.firstChild) {
 		$CONTENIDO_CARRITO.removeChild($CONTENIDO_CARRITO.firstChild)
 	}
+}
+
+function agregarLocalStorage() {
+	localStorage.setItem('carrito', JSON.stringify(listadoCarrito))
 }
