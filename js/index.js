@@ -3,6 +3,8 @@ const $CARRITO = document.querySelector('#carrito')
 const $CONTENIDO_CARRITO = document.querySelector('#lista-carrito tbody')
 const $LISTA_PRODUCTOS = document.querySelector('#lista-productos')
 const $VACIAR_CARRITO = document.querySelector('#vaciar-carrito')
+const $INPUT_FILTER = document.querySelector('#input-filter')
+const $PRECIO_TOTAL = document.querySelector('#precio-total')
 let listadoCarrito = []
 
 cargarEvento()
@@ -27,6 +29,7 @@ function vaciarCarrito() {
 	listadoCarrito = []
 	localStorage.removeItem('carrito')
 	limpiarCarrito()
+	dibujarTotal()
 }
 
 //Funcion para eliminar el producto
@@ -60,7 +63,7 @@ function obtenerDatosProductos(producto) {
 	const infoProducto = {
 		imagen: producto.querySelector('img').src,
 		titulo: producto.querySelector('.card-title').textContent,
-		precio: producto.querySelector('.precio').textContent,
+		precio: parseFloat(producto.querySelector('.precio').textContent.replace('$', '')),
 		id: producto.querySelector('a').getAttribute('data-id'),
 		cantidad: 1,
 	}
@@ -112,6 +115,7 @@ function añadirProductosCarrito() {
 		$CONTENIDO_CARRITO.appendChild(tr)
 	})
 
+	dibujarTotal()
 	agregarLocalStorage()
 }
 
@@ -123,4 +127,25 @@ function limpiarCarrito() {
 
 function agregarLocalStorage() {
 	localStorage.setItem('carrito', JSON.stringify(listadoCarrito))
+}
+
+function calcularTotal() {
+	const costoTotal = listadoCarrito.reduce(
+		(total, producto) => total + parseFloat(producto.precio) * producto.cantidad,
+		0
+	)
+	return costoTotal
+}
+
+function dibujarTotal() {
+	const costoTotal = calcularTotal()
+
+	if (listadoCarrito.length > 0) {
+		$PRECIO_TOTAL.innerHTML = ''
+		let span = document.createElement('span')
+		span.innerHTML = `Costo total: $${costoTotal.toFixed(3)}`
+		$PRECIO_TOTAL.appendChild(span)
+	} else {
+		$PRECIO_TOTAL.innerHTML = `<p>No hay productos</p>`
+	}
 }
