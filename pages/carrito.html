@@ -46,12 +46,11 @@
     <main class="main-border">
         <section class="container">
 
-            <div class="row mt-5">
-                <div class="col info_tienda">
-                    <h1 class="heading mb-5 flex-grow-1">Nuestra Tienda</h1>
-                    <p class="mt-5">Todos nuestros productos a tu disposición</p>
+            <div class="row d-flex mt-5">
+                <div class="col">
+                    <h1 class="heading mb-5">Tienda</h1>
                 </div>
-                <div class="col-1 carrito">
+                <div class="col text-end carrito">
                     <div class="two columns u-pull-right">
                         <ul>
                             <li class="submenu">
@@ -60,11 +59,11 @@
 
                                     <table id="lista-carrito" class="w-100">
                                         <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
+                                            <tr class="tr-carrito">
+                                                <th class="p-2">Imagen</th>
+                                                <th class="p-2">Nombre</th>
+                                                <th class="p-2">Precio</th>
+                                                <th class="p-2">Cantidad</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -85,6 +84,12 @@
             </div>
 
             <div class="row">
+                <div class="col info_tienda">
+                    <p class="mt-5">Todos nuestros productos a tu disposición</p>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col div-filter">
                     <small>Buscar:</small>
                     <input type="text" name="" id="input-filter">
@@ -92,9 +97,9 @@
             </div>
 
             <div id="lista-productos"
-                class="row w-100 row-gap-3 m-auto mt-4 row-cols-2 row-cols-md-3 column-gap-sm-1 column-gap-md-0 listado-productos">
+                class="row row-gap-3 m-auto mt-4 row-cols-2 row-cols-md-3 column-gap-sm-1 column-gap-md-0 listado-productos">
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_957539-MLA50144895276_052022-F.webp"
                             class="m-auto" width="150" alt="Proteina ena">
                         <div class="card-body">
@@ -112,7 +117,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/creatina-bsn.webp" class="m-auto" width="150"
                             alt="Creatina bsn">
                         <div class="card-body">
@@ -129,7 +134,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/creatina-star.webp" class="m-auto" width="150"
                             alt="Creatina star nutrition">
                         <div class="card-body">
@@ -148,7 +153,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/proteina-star.webp" class="m-auto" width="150"
                             alt="proteina star nutrition">
                         <div class="card-body">
@@ -166,7 +171,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/creatina-universal.webp" class="m-auto" width="150"
                             alt="creatina universal">
                         <div class="card-body">
@@ -184,7 +189,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/proteina-bsn.webp" class="m-auto" width="150"
                             alt="proteina bsn">
                         <div class="card-body">
@@ -202,7 +207,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/proteina-universal.webp" class="m-auto" width="150"
                             alt="proteina universal">
                         <div class="card-body">
@@ -220,7 +225,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/creatina-ena.webp" class="m-auto" width="150"
                             alt="creatina ena">
                         <div class="card-body">
@@ -238,7 +243,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/pre-entreno-ena.webp" class="m-auto" width="150"
                             alt="pre entreno ena">
                         <div class="card-body">
@@ -255,7 +260,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/animal-pack-universal.webp" class="m-auto" width="150"
                             alt="animal pack universal">
                         <div class="card-body">
@@ -273,7 +278,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card w-sm-50">
+                    <div class="card">
                         <img src="../img/imagenes-suplementos/quemador-grasa-ena.webp" class="m-auto" width="150"
                             alt="quemador de grasa ena">
                         <div class="card-body">

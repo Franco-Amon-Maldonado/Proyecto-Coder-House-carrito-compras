@@ -11,16 +11,19 @@
                 }
 
                 &:hover #carrito{
+                    @include tablet{
+                        max-height: 400px;
+                        min-width: 500px;
+                    }
                     display: block;
                     position: absolute;
                     right:0;
-                
                     top:100%;
                     z-index: 1;
                     background-color: white;
                     padding: 20px;
                     max-height: 400px;
-                    min-width: 500px;
+                    min-width: 300px;
                     text-align: center;
                     overflow-y: auto;
                 }
@@ -28,6 +31,25 @@
             
 
             #lista-carrito{
+
+                .tr-carrito{
+                    font-size: 12px;
+                    @include tablet{
+                        font-size: 1rem;
+                    }
+                }
+
+                .td-carrito{
+                    font-size: 12px;
+                    @include tablet{
+                        font-size: 1rem;
+                    }
+                }
+
+                .img-carrito{
+                    width: 50px;
+                }
+
                 .borrar-producto {
                     background-color: red;
                     border-radius: 50%;
@@ -80,6 +102,8 @@
                     width: 18rem;
                 }
             img{
+                flex-grow: 1;
+                object-fit: cover;
                 width: 80px;
                 @include tablet{
                     width: 150px;

@@ -126,11 +126,11 @@ function añadirProductosCarrito() {
 		const { imagen, precio, titulo, cantidad, id } = producto
 		//Creo la fila para el tbody
 		tr.innerHTML = `
-            <td><img src="${imagen}" width="100" /></td>
-            <td style="white-space: pre-line; width:20%">${titulo}</td>
-            <td>${precio}</td>
-            <td>${cantidad}</td>
-            <td><a href='#' class="borrar-producto" data-id="${id}">X</a></td>
+            <td><img src="${imagen}" class="img-carrito" /></td>
+            <td class= "td-carrito" style="white-space: pre-line; width:20%">${titulo}</td>
+            <td class= "td-carrito">${precio}</td>
+            <td class= "td-carrito">${cantidad}</td>
+            <td class= "td-carrito"><a href='#' class="borrar-producto" data-id="${id}">X</a></td>
         `
 		//Agrego el tr creado al tbody
 		$CONTENIDO_CARRITO.appendChild(tr)
@@ -165,6 +165,7 @@ function dibujarTotal() {
 		$PRECIO_TOTAL.innerHTML = ''
 		let span = document.createElement('span')
 		span.innerHTML = `Costo total: $${costoTotal.toFixed(3)}`
+		span.style.fontWeight= "bold"
 		$PRECIO_TOTAL.appendChild(span)
 	} else {
 		$PRECIO_TOTAL.innerHTML = `<p>No hay productos</p>`
