@@ -1,3 +1,6 @@
+import {formatearDineroARPesos } from './formatearDinero.js'
+
+
 //variables
 const $CARRITO = document.querySelector('#carrito')
 const $CONTENIDO_CARRITO = document.querySelector('#lista-carrito tbody')
@@ -128,7 +131,7 @@ function añadirProductosCarrito() {
 		tr.innerHTML = `
             <td><img src="${imagen}" class="img-carrito" /></td>
             <td class= "td-carrito" style="white-space: pre-line; width:20%">${titulo}</td>
-            <td class= "td-carrito">${precio}</td>
+            <td class= "td-carrito">${formatearDineroARPesos(precio)}</td>
             <td class= "td-carrito">${cantidad}</td>
             <td class= "td-carrito"><a href='#' class="borrar-producto" data-id="${id}">X</a></td>
         `
@@ -152,7 +155,7 @@ function agregarLocalStorage() {
 
 function calcularTotal() {
 	const costoTotal = listadoCarrito.reduce(
-		(total, producto) => total + parseFloat(producto.precio) * producto.cantidad,
+		(total, producto) => total + parseInt(producto.precio) * producto.cantidad,
 		0
 	)
 	return costoTotal
@@ -164,7 +167,7 @@ function dibujarTotal() {
 	if (listadoCarrito.length > 0) {
 		$PRECIO_TOTAL.innerHTML = ''
 		let span = document.createElement('span')
-		span.innerHTML = `Costo total: $${costoTotal.toFixed(3)}`
+		span.innerHTML = `Costo total: ${formatearDineroARPesos(costoTotal)}`
 		span.style.fontWeight= "bold"
 		$PRECIO_TOTAL.appendChild(span)
 	} else {
