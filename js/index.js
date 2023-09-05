@@ -29,10 +29,12 @@ function cargarEvento() {
 		})
 
 		$PRODUCTOS.forEach((producto) => {
+			const colProducto = producto.parentNode
 			if (productosFiltrados.includes(producto)) {
-				producto.style.display = 'block'
+				
+				colProducto.style.display = 'flex'
 			} else {
-				producto.style.display = 'none'
+				colProducto.style.display = 'none'
 			}
 		})
 	})
