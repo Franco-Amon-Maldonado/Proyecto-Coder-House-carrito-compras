@@ -416,6 +416,10 @@ main {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.container .row #lista-carrito .borrar-producto:hover {
+  background-color: rgb(163, 0, 0);
 }
 .container .row #vaciar-carrito {
   border: 1px solid gray;
