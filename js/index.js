@@ -7,9 +7,8 @@ const $CONTENIDO_CARRITO = document.querySelector('#lista-carrito tbody')
 const $LISTA_PRODUCTOS = document.querySelector('#lista-productos')
 const $VACIAR_CARRITO = document.querySelector('#vaciar-carrito')
 const $BTN_COMPRAR = document.querySelector('#btn-comprar')
-const $INPUT_FILTER = document.querySelector('#input-filter')
 const $PRECIO_TOTAL = document.querySelector('#precio-total')
-const $PRODUCTOS = document.querySelectorAll('.listado-productos .card')
+
 let listadoCarrito = []
 
 cargarEvento()
@@ -19,29 +18,11 @@ async function cargarEvento() {
 
 	document.addEventListener('DOMContentLoaded', async () => {
 		listadoCarrito = JSON.parse(localStorage.getItem('carrito')) || []
+		ocultarBotonComprar()
 		// Obtener los productos desde la API y renderizarlos
 		const productos = await obtenerProductos()
 		renderizarProductos(productos)
 		añadirProductosCarrito()
-	})
-
-	//Filtrar productos
-
-	$INPUT_FILTER.addEventListener('keyup', () => {
-		const filtro = $INPUT_FILTER.value.toLowerCase().trim()
-		const productosFiltrados = Array.from($PRODUCTOS).filter((producto) => {
-			const tituloProducto = producto.querySelector('.card-title').textContent.toLowerCase()
-			return tituloProducto.includes(filtro)
-		})
-
-		$PRODUCTOS.forEach((producto) => {
-			const colProducto = producto.parentNode
-			if (productosFiltrados.includes(producto)) {
-				colProducto.style.display = 'flex'
-			} else {
-				colProducto.style.display = 'none'
-			}
-		})
 	})
 
 	$VACIAR_CARRITO.addEventListener('click', vaciarCarrito)
@@ -64,9 +45,8 @@ function btnComprar() {
 			Swal.fire('Genial', 'Comprado éxitosamente!', 'success')
 
 			vaciarCarrito() // Vaciar el carrito al hacer clic
-			setTimeout(() => {
-				location.reload()
-			}, 3000)
+
+			ocultarBotonComprar()
 		})
 	}
 }
@@ -76,7 +56,6 @@ async function obtenerProductos() {
 	try {
 		const response = await fetch('../database/productos.json')
 		const data = await response.json()
-		console.log(data)
 		return data // Retorna los datos de los productos en formato JSON
 	} catch (error) {
 		console.error('Error al obtener los productos:', error)
@@ -152,7 +131,8 @@ function vaciarCarrito() {
 	localStorage.removeItem('carrito')
 	limpiarCarrito()
 	dibujarTotal()
-	location.reload()
+	ocultarBotonComprar()
+	mostrarOcultarBotonVaciarCarrito()
 }
 
 //Funcion para eliminar el producto
@@ -161,11 +141,28 @@ function eliminarProducto(e) {
 	if (e.target.classList.contains('borrar-producto')) {
 		const productoId = e.target.getAttribute('data-id')
 		//Elimina el producto seleccionado
-
+		Swal.fire({
+			title: '¿Esta seguro de eliminar el producto del carrito?',
+			text: 'Esta acción no se puede revertir',
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Si, eliminar',
+		}).then((result) => {
+			if (result.isConfirmed) {
+				listadoCarrito = listadoCarrito.filter((producto) => producto.id !== productoId)
+				añadirProductosCarrito()
+				Swal.fire('Eliminado', 'Producto eliminado del carrito', 'success')
+			}
+		})
 		//Traigo todos excepto el id que estoy seleccionado
-		listadoCarrito = listadoCarrito.filter((producto) => producto.id !== productoId)
 
 		añadirProductosCarrito()
+
+		if (listadoCarrito.length === 0) {
+			ocultarBotonComprar()
+		}
 	}
 }
 
@@ -254,11 +251,13 @@ function añadirProductosCarrito() {
 		})
 	})
 
-	if (listadoCarrito.length > 0) {
+	if (listadoCarrito.length >= 1) {
 		btnComprar()
 	}
 
 	dibujarTotal()
+	ocultarBotonComprar()
+	mostrarOcultarBotonVaciarCarrito()
 	agregarLocalStorage()
 }
 
@@ -291,5 +290,27 @@ function dibujarTotal() {
 		$PRECIO_TOTAL.appendChild(span)
 	} else {
 		$PRECIO_TOTAL.innerHTML = `<p>No hay productos</p>`
+	}
+}
+
+function ocultarBotonComprar() {
+	if (listadoCarrito.length > 0) {
+		// Si hay elementos en el carrito, muestra el botón "Comprar"
+		$BTN_COMPRAR.style.display = 'block'
+	} else {
+		// Si no hay elementos en el carrito, oculta el botón "Comprar"
+		$BTN_COMPRAR.style.display = 'none'
+	}
+}
+
+function mostrarOcultarBotonVaciarCarrito() {
+	const botonVaciarCarrito = document.querySelector('#vaciar-carrito')
+
+	if (listadoCarrito.length > 0) {
+		// Si hay elementos en el carrito, muestra el botón
+		botonVaciarCarrito.style.display = 'block'
+	} else {
+		// Si no hay elementos en el carrito, oculta el botón
+		botonVaciarCarrito.style.display = 'none'
 	}
 }
