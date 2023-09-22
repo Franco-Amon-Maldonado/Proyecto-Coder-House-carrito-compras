@@ -20,6 +20,23 @@ main{
     min-height: 100vh;
 }
 
+.button-comprar{
+    width: 100%;  
+    border: none;  
+    background-color: #0D6EFD;  
+    color: white;        
+    padding: 0.5rem;
+    display: block;
+    text-align: center;
+    margin-top:1rem;
+    transition: all 0.3s ease;
+
+    &:hover{
+        background-color: #408cff;
+        color: black;
+    }
+}
+
 .contenedor__planes{
     display: flex;
     flex-direction: column;

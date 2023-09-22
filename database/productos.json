@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "nombre": "Proteina ENA 1KG",
+        "descripcion": "Suplemento en polvo ENA Sport True Made proteínas sabor vanilla ice cream en pote de 930g",
+        "imagen": "../img/imagenes-suplementos/proteina-ena.webp",
+        "precio": 11500
+    },
+    {
+        "id": 2,
+        "nombre": "Creatina BSN",
+        "descripcion": "Creatina Bsn - 309 Grs - 60 Servicios - Suplemento Importado",
+        "imagen": "../img/imagenes-suplementos/creatina-bsn.webp",
+        "precio": 32826
+    },
+    {
+        "id": 3,
+        "nombre": "Creatina Star-Nutrition",
+        "descripcion": "Suplemento en polvo Star Nutrition Creatina 100% Pura en pote de 300g",
+        "imagen": "../img/imagenes-suplementos/creatina-star.webp",
+        "precio": 14539
+    },
+    {
+        "id": 4,
+        "nombre": "Proteina Star-Nutrition",
+        "descripcion": "Suplemento en polvo ENA Sport True Made proteínas sabor vanilla ice cream en pote de 930g",
+        "imagen": "../img/imagenes-suplementos/proteina-star.webp",
+        "precio": 9999
+    },
+    {
+        "id": 5,
+        "nombre": "Creatina Universal",
+        "descripcion": "Universal Nutrition Creatina monohidratada Creatine Polvo - Pote - Sin sabor - Unidad - 1 - 200 g",
+        "imagen": "../img/imagenes-suplementos/creatina-universal.webp",
+        "precio": 17240
+    },
+    {
+        "id": 6,
+        "nombre": "Proteina BSN",
+        "descripcion": "Suplemento en polvo BSN Syntha-6 Isolate proteína sabor vanilla ice cream en pote de 1.82kg",
+        "imagen": "../img/imagenes-suplementos/proteina-bsn.webp",
+        "precio": 78595
+    },
+    {
+        "id": 7,
+        "nombre": "Proteina Universal",
+        "descripcion": "Suplemento en polvo Universal Nutrition Ultra Whey Pro proteínas sabor vainilla ice cream en pote de 909g",
+        "imagen": "../img/imagenes-suplementos/proteina-universal.webp",
+        "precio": 17361
+    },
+    {
+        "id": 8,
+        "nombre": "Creatina ena",
+        "descripcion": "Suplemento en polvo ENA Sport Creatina Micronizada 300g sabor neutro en Doypack",
+        "imagen": "../img/imagenes-suplementos/creatina-ena.webp",
+        "precio": 16500
+    },
+    {
+        "id": 9,
+        "nombre": "Pre-entreno ena",
+        "descripcion": "Pre War 400g Ena Sport - Energizante Pre Entrenamient",
+        "imagen": "../img/imagenes-suplementos/pre-entreno-ena.webp",
+        "precio": 11100
+    },
+    {
+        "id": 10,
+        "nombre": "Animal Pack Universal",
+        "descripcion": "Universal Nutrition Vitaminas Animal Pak Comprimidos - Lata - Sin sabor - Unidad - 44 - 1",
+        "imagen": "../img/imagenes-suplementos/animal-pack-universal.webp",
+        "precio": 35708
+    },
+    {
+        "id": 11,
+        "nombre": "Quemador grasa ena",
+        "descripcion": "Ripped X Ena Sport Quemador De Grasas - Descenso De Peso Sabor Sin Sabor",
+        "imagen": "../img/imagenes-suplementos/quemador-grasa-ena.webp",
+        "precio": 3200
+    }
+]

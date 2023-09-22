@@ -68,6 +68,22 @@ main {
   min-height: 100vh;
 }
 
+.button-comprar {
+  width: 100%;
+  border: none;
+  background-color: #0D6EFD;
+  color: white;
+  padding: 0.5rem;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+.button-comprar:hover {
+  background-color: #408cff;
+  color: black;
+}
+
 .contenedor__planes {
   display: flex;
   flex-direction: column;
@@ -405,6 +421,19 @@ main {
   .container .row #lista-carrito .td-carrito {
     font-size: 1rem;
   }
+}
+.container .row #lista-carrito .td-carrito span {
+  margin: 0.6rem;
+}
+.container .row #lista-carrito .td-carrito span .boton-sumar, .container .row #lista-carrito .td-carrito span .boton-restar {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+.container .row #lista-carrito .td-carrito span .boton-sumar {
+  color: green;
+}
+.container .row #lista-carrito .td-carrito span .boton-restar {
+  color: red;
 }
 .container .row #lista-carrito .img-carrito {
   width: 50px;

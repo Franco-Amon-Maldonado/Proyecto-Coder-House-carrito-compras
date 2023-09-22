@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../styles/main.css">
     <title>Valhalla - Nuestra Tienda</title>
 </head>
@@ -74,7 +75,7 @@
                                             </tr>
                                         </tfoot>
                                     </table>
-
+                                    <div id="btn-comprar"></div>
                                     <a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a>
                                 </div>
                             </li>
@@ -98,236 +99,9 @@
 
             <div id="lista-productos"
                 class="row row-gap-3 m-auto mt-4 row-cols-2 row-cols-md-3 column-gap-sm-1 column-gap-md-0 listado-productos">
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_957539-MLA50144895276_052022-F.webp"
-                               class="mt-5" width="150" alt="Proteina ena">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Proteina ENA 1KG</h5>
-                            <p class="card-text">Suplemento en polvo ENA Sport True Made proteínas sabor vanilla ice
-                                cream en pote de 930g</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$11.500</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="1" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/creatina-bsn.webp" class="mt-5" width="150"
-                                alt="Creatina bsn">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Creatina BSN</h5>
-                            <p class="card-text">Creatina Bsn - 309 Grs - 60 Servicios - Suplemento Importado</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$32.826</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="2" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/creatina-star.webp" class="mt-5" width="150"
-                                alt="Creatina star nutrition">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Creatina Star-Nutrition</h5>
-                            <p class="card-text">Suplemento en polvo Star Nutrition Creatina 100% Pura en pote de 300g
-                            </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$
-                                14.539</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="3" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-
-                            <img src="../img/imagenes-suplementos/proteina-star.webp" class="mt-5" width="150"
-                                alt="proteina star nutrition">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Proteina Star-Nutrition</h5>
-                            <p class="card-text">Suplemento en polvo ENA Sport True Made proteínas sabor vanilla ice
-                                cream en pote de 930g</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$9.999</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="4" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/creatina-universal.webp" class="mt-5" width="150"
-                                alt="creatina universal">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Creatina Universal</h5>
-                            <p class="card-text">Universal Nutrition Creatina monohidratada Creatine Polvo - Pote - Sin
-                                sabor - Unidad - 1 - 200 g</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$17.240</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="5" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-
-                            <img src="../img/imagenes-suplementos/proteina-bsn.webp" class="mt-5" width="150"
-                                alt="proteina bsn">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Proteina BSN</h5>
-                            <p class="card-text">Suplemento en polvo BSN Syntha-6 Isolate proteína sabor vanilla ice
-                                cream en pote de 1.82kg</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$78.595</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="6" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/proteina-universal.webp" class="mt-5" width="150"
-                                alt="proteina universal">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Proteina Universal</h5>
-                            <p class="card-text">Suplemento en polvo Universal Nutrition Ultra Whey Pro proteínas sabor
-                                vainilla ice cream en pote de 909g</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$17.361</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="7" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/creatina-ena.webp" class="mt-5" width="150"
-                                alt="creatina ena">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Creatina ena</h5>
-                            <p class="card-text">Suplemento en polvo ENA Sport Creatina Micronizada 300g sabor neutro en
-                                Doypack</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$16.500</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="8" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/pre-entreno-ena.webp" class="mt-5" width="150"
-                                alt="pre entreno ena">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pre-entreno ena</h5>
-                            <p class="card-text">Pre War 400g Ena Sport - Energizante Pre Entrenamient</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$11.100</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="8" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/animal-pack-universal.webp" class="mt-5" width="150"
-                                alt="animal pack universal">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Animal Pack Universal</h5>
-                            <p class="card-text">Universal Nutrition Vitaminas Animal Pak Comprimidos - Lata - Sin sabor
-                                - Unidad - 44 - 1</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$35.708</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="9" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="h-100 m-auto">
-                            <img src="../img/imagenes-suplementos/quemador-grasa-ena.webp" class="mt-5" width="150"
-                                alt="quemador de grasa ena">
-
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Quemador grasa ena</h5>
-                            <p class="card-text">Ripped X Ena Sport Quemador De Grasas - Descenso De Peso Sabor Sin
-                                Sabor</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item precio text-end">$3.200</li>
-                        </ul>
-                        <div class="card-body button">
-                            <a href="#" data-id="10" class="btn btn-primary agregar-carrito">Agregar al carrito</a>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
+            
         </section>
     </main>
 
@@ -383,6 +157,8 @@
 
     </footer>
     <script type="module" src="../js/index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 

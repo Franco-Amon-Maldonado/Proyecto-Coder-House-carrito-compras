@@ -44,11 +44,32 @@
                     @include tablet{
                         font-size: 1rem;
                     }
+
+                    span{   
+
+                       margin: 0.6rem;
+
+                        .boton-sumar, .boton-restar{
+                            font-size:1.3rem;
+                            display: inline-block;
+                           
+                        }
+                        .boton-sumar{
+                            color: green;
+                        }
+
+                        .boton-restar{
+                            color: red;
+                        }
+                    }
+
                 }
 
                 .img-carrito{
                     width: 50px;
                 }
+
+                
 
                 .borrar-producto {
                     background-color: red;
